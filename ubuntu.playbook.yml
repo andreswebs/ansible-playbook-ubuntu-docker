@@ -1,0 +1,54 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Ubuntu server
+  hosts: servers
+  become: yes
+  become_user: root
+
+  tasks:
+    # System update
+    - name: Upgrade system
+      apt:
+        update_cache: yes
+        upgrade: dist
+        autoremove: yes
+        autoclean: yes
+      tags:
+        - system
+
+    - import_tasks: tasks/swap.yml
+
+    - import_tasks: tasks/system.yml
+
+    - name: Install dependencies
+      apt:
+        update_cache: yes
+        install_recommends: no
+        state: present
+        name:
+          - git
+          - jq
+          - python3-pip
+          - python3-virtualenv
+      tags:
+        - dependencies
+
+    - import_role:
+        name: docker
+
+    - import_tasks: tasks/docker-compose-app.yml
+
+    # System check
+    - name: Check if a reboot is required
+      shell: "[ -f /var/run/reboot-required ]"
+      failed_when: false
+      register: reboot_required
+      changed_when: reboot_required.rc == 0
+      notify: Reboot instance
+      tags:
+        - system
+
+  handlers:
+    - name: Reboot instance
+      reboot:
+        msg: Maintenance reboot initiated
