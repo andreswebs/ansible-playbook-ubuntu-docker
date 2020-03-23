@@ -4,7 +4,7 @@
 # https://unix.stackexchange.com/questions/23072/how-can-i-check-if-swap-is-active-from-the-command-line
 ---
 - name: Allocate swap file
-  command: fallocate -l 4g /swapfile
+  command: fallocate -l 1g /swapfile
   args:
     creates: /swapfile
   tags:
