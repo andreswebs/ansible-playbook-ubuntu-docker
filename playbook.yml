@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Ubuntu server
-  hosts: servers
+  hosts: all
   become: yes
   become_user: root
 
