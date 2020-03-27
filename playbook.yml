@@ -20,19 +20,6 @@
 
     - import_tasks: tasks/system.yml
 
-    - name: Install dependencies
-      apt:
-        update_cache: yes
-        install_recommends: no
-        state: present
-        name:
-          - git
-          - jq
-          - python3-pip
-          - python3-virtualenv
-      tags:
-        - dependencies
-
     - import_role:
         name: docker
 

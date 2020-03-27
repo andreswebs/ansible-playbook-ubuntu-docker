@@ -1,13 +1,13 @@
 ---
-# System update
-- name: Upgrade system
-  apt:
-    update_cache: yes
-    upgrade: dist
-    autoremove: yes
-    autoclean: yes
-  tags:
-    - system
+# # System update
+# - name: Upgrade system
+#   apt:
+#     update_cache: yes
+#     upgrade: dist
+#     autoremove: yes
+#     autoclean: yes
+#   tags:
+#     - system
 
 - name: Install basic security packages
   apt:
@@ -27,7 +27,7 @@
       - tmux
       - htop
       - curl
-      - git-core
+      - git
       - jq
   tags:
     - system
