@@ -16,7 +16,7 @@
       tags:
         - system
 
-    # - import_tasks: tasks/swap.yml
+    - import_tasks: tasks/swap.yml
 
     - import_tasks: tasks/system.yml
 
