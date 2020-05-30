@@ -29,5 +29,7 @@
       - curl
       - git
       - jq
+      - zip
+      - unzip
   tags:
     - system

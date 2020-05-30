@@ -1,7 +1,8 @@
 [submodule "roles/docker"]
-	path = roles/docker
+  path = roles/docker
   url = https://github.com/andreswebs/ansible-role-docker.git
 
 [submodule "roles/docker-compose-app"]
-	path = roles/docker-compose-app
-	url = https://github.com/andreswebs/ansible-role-docker-compose-app.git
+  path = roles/docker-compose-app
+  url = https://github.com/andreswebs/ansible-role-docker-compose-app.git
+
