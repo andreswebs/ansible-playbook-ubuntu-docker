@@ -6,3 +6,6 @@
   path = roles/docker-compose-app
   url = https://github.com/andreswebs/ansible-role-docker-compose-app.git
 
+[submodule "roles/dev-box"]
+	path = roles/dev-box
+	url = https://github.com/andreswebs/ansible-role-dev-box.git
