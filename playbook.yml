@@ -1,0 +1,13 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Ubuntu
+  hosts: "{{ custom_hosts | default('servers') }}"
+  become: true
+  become_user: root
+
+  tasks:
+    - ansible.builtin.import_role:
+        name: andreswebs.dev_box
+
+    - ansible.builtin.import_role:
+        name: andreswebs.docker
