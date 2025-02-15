@@ -2,3 +2,6 @@
 roles:
   - name: andreswebs.dev_box
   - name: andreswebs.docker
+
+collections:
+  - name: amazon.aws
