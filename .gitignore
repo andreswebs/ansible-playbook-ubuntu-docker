@@ -5,3 +5,4 @@ ansible-lint.result.sarif
 .ansible
 inventory/hosts.ini
 vars/
+tmp/
