@@ -6,6 +6,12 @@
 ansible-galaxy install -r requirements.yml
 ```
 
+## Example: Hetzner
+
+```sh
+./playbook.yml -e custom_hosts=bot
+```
+
 ## Example: AWS
 
 ```sh
