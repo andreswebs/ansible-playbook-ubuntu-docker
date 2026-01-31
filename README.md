@@ -1,5 +1,13 @@
 # ansible-playbook-ubuntu-docker
 
+## Usage
+
+```sh
+ansible-galaxy install -r requirements.yml
+```
+
+## Example: AWS
+
 ```sh
 export X_TAG="vm_tag_${INSTANCE_NAME}"
 ```
@@ -18,3 +26,11 @@ ansible "${X_TAG}" --inventory ./inventory/aws_ec2.yml -m ping \
   --extra-vars "ansible_aws_ssm_region=${AWS_REGION}" \
   --extra-vars "ansible_aws_ssm_bucket_name=${X_AWS_SSM_BUCKET_NAME}"
 ```
+
+## Authors
+
+**Andre Silva** - [@andreswebs](https://github.com/andreswebs)
+
+## License
+
+[Unlicense](UNLICENSE)
