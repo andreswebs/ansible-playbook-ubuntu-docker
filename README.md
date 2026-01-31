@@ -9,13 +9,22 @@ ansible-galaxy install -r requirements.yml
 ## Example: Hetzner
 
 ```sh
-./playbook.yml -e custom_hosts=bot
+export HCLOUD_TOKEN
+export ANSIBLE_REMOTE_USER="root"
+export ANSIBLE_PRIVATE_KEY_FILE="${HOME}/.ssh/id_ed25519_hetzner"
+```
+
+```sh
+./playbook.yml -e custom_hosts=example
 ```
 
 ## Example: AWS
 
 ```sh
 export X_TAG="vm_tag_${INSTANCE_NAME}"
+export X_AWS_SSM_BUCKET_NAME
+export AWS_REGION
+export AWS_PROFILE
 ```
 
 ```sh
